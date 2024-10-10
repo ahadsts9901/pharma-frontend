@@ -1,0 +1,31 @@
+.addStudentForm .mui-vpu9be-MuiInputBase-root-MuiOutlinedInput-root {
+    width: 196px !important;
+}
+
+.addStudentForm .mui-1s1f19s-MuiStack-root>.MuiTextField-root,
+.mui-1s1f19s-MuiStack-root>.MuiPickersTextField-root {
+    min-width: 196px !important;
+}
+
+.users-data-display-table {
+    max-width: fit-content;
+    min-width: 100%;
+    overflow: auto;
+    min-height: 600px;
+    max-height: 600px;
+}
+
+.users-data-display-table table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 9999;
+}
