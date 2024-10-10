@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     user: {
         isLogin: null,
+        isAdminDrawerOpen: false,
     },
 }
 
@@ -18,9 +19,12 @@ export const userSlice: any = createSlice({
         logout: (state: { user: {} | null }) => {
             state.user = { ...state?.user, isLogin: false }
         },
+        setIsAdminDrawerOpen: (state: any, action: any) => {
+            state.isAdminDrawerOpen = action?.payload
+        }
     }
 })
 
-export const { login, logout } = userSlice.actions
+export const { login, logout, setIsAdminDrawerOpen } = userSlice.actions
 
 export default userSlice.reducer

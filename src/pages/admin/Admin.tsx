@@ -1,8 +1,13 @@
+import MiniDrawerMUI from "../../components/mui/DrawerMui"
 import "./Admin.css"
 
 const Admin = () => {
     return (
-        <div>Admin</div>
+        <>
+            <MiniDrawerMUI>
+                
+            </MiniDrawerMUI>
+        </>
     )
 }
 
