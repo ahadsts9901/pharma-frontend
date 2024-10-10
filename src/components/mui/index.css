@@ -22,3 +22,7 @@
     padding: 2em;
     color: #454545;
 }
+
+.MuiOutlinedInput-root{
+    border-radius: 0!important;
+}

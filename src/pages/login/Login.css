@@ -1,1 +1,23 @@
-/*# sourceMappingURL=Login.css.map */
+.company-avatar {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  cursor: pointer;
+  margin-bottom: 1.2em;
+}
+
+.css-ousj0c-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 0 !important;
+}
+
+.login-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Login.css.map */

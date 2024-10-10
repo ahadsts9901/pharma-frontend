@@ -1,7 +1,21 @@
-.company-avatar{
-    width: 80px;
-    height: 80px;
+.company-avatar {
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     object-position: center;
     cursor: pointer;
+    margin-bottom: 1.2em;
+}
+
+.css-ousj0c-MuiInputBase-root-MuiOutlinedInput-root {
+    border-radius: 0 !important;
+}
+
+.login-cont {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

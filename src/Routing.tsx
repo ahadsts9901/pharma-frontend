@@ -1,8 +1,8 @@
 import "./App.css"
-import '@fontsource/jost/300.css';
-import '@fontsource/jost/400.css';
-import '@fontsource/jost/500.css';
-import '@fontsource/jost/700.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/700.css';
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,33 +1,48 @@
-import '@fontsource/jost/300.css';
-import '@fontsource/jost/400.css';
-import '@fontsource/jost/500.css';
-import '@fontsource/jost/700.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/700.css';
 
 import { createTheme } from '@mui/material/styles';
 
 export const themeSchema: any = {
     palette: {
         primary: {
-            light: '#254e65',
-            main: '#1f3b4d',
-            dark: '#122a3a',
-            // contrastText: '#C4DDE4',
-            contrastText: '#eff9fc',
+            light: '#be0000',
+            main: '#800000',
+            dark: '#560000',
+            // contrastText: '#ffeeee',
+            contrastText: '#ffffff',
         },
     },
     typography: {
-        fontFamily: 'Jost, Roboto, sans-serif',
+        fontFamily: 'Poppins, sans-serif',
         textTransform: 'none',
+        fontSize: 12,
     },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    borderRadius: '50px',
+                    borderRadius: '0px',
                     padding: "12px 24px",
                 },
             }
+        },
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontSize: '0.875rem',
+                },
+            },
+        },
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 0,
+                },
+            },
         },
     }
 }
