@@ -1,4 +1,4 @@
-export const baseUrl = window.location.href.includes("https") ? "" : "http://localhost:5002"
+export const baseUrl = window.location.href.includes("https") ? "http://localhost:5002" : "http://localhost:5002"
 export const webUrl = ""
 
 export const usernamePattern = /^[a-zA-Z0-9 !@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{2,15}$/;
