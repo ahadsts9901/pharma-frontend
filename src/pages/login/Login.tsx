@@ -128,63 +128,63 @@ export default function Main() {
             }
             <div className="login-cont">
                 <div className="login-main">
-                    <Container component="main" maxWidth="xs">
-                        <CssBaseline />
-                        <Box
-                            sx={{
-                                marginTop: 8,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                            }}
-                        >
-                            <CompanyAvatar />
-                            <Typography component="h1" variant="h5" sx={{ fontSize: "1.2em" }}>
-                                Sign in
-                            </Typography>
-                            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: "100%" }}>
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="email"
-                                    label="Email"
-                                    autoFocus
-                                    type="email"
-                                    name="email"
-                                    style={{
-                                        marginBottom: "16px",
-                                    }}
-                                />
-                                <PasswordMUI
-                                    label="Password * "
-                                    required
-                                    onChange={(value: any) => setPassword(value)}
-                                    name="password"
-                                />
-                                {/* <FormControlLabel style={{
+                    <div className="left">
+                        <Container component="main" maxWidth="xs" className="left-page">
+                            <CssBaseline />
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <CompanyAvatar />
+                                <Typography component="h1" variant="h5" sx={{ fontSize: "1.2em" }}>
+                                    Sign in
+                                </Typography>
+                                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: "100%" }}>
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        id="email"
+                                        label="Email"
+                                        autoFocus
+                                        type="email"
+                                        name="email"
+                                        style={{
+                                            marginBottom: "16px",
+                                        }}
+                                    />
+                                    <PasswordMUI
+                                        label="Password * "
+                                        required
+                                        onChange={(value: any) => setPassword(value)}
+                                        name="password"
+                                    />
+                                    {/* <FormControlLabel style={{
                             marginTop: "16px"
                         }}
                             control={<Checkbox value="remember" color="primary" />}
                             label="Remember me"
                         /> */}
-                                <Button
-                                    type="submit"
-                                    fullWidth
-                                    variant="contained"
-                                    disabled={isLoading}
-                                    sx={{ mt: 3, mb: 2 }}
-                                >
-                                    {
-                                        isLoading ?
-                                            <>
-                                                <span className="buttonLoader"></span>
-                                                Processing
-                                            </>
-                                            : "Sign In"
-                                    }
-                                </Button>
-                                {/* <Grid container>
+                                    <Button
+                                        type="submit"
+                                        fullWidth
+                                        variant="contained"
+                                        disabled={isLoading}
+                                        sx={{ mt: 3, mb: 2 }}
+                                    >
+                                        {
+                                            isLoading ?
+                                                <>
+                                                    <span className="buttonLoader"></span>
+                                                    Processing
+                                                </>
+                                                : "Sign In"
+                                        }
+                                    </Button>
+                                    {/* <Grid container>
                             <Grid item xs style={{ marginRight: "16px" }}>
                                 <Link className="cursor-pointer"
                                     onClick={() => navigate("/auth/forgot-password")}>
@@ -197,11 +197,14 @@ export default function Main() {
                                 </Link>
                             </Grid>
                         </Grid> */}
+                                </Box>
                             </Box>
-                        </Box>
-                        <Copyright sx={{ mt: 4, mb: 4 }} />
-                    </Container>
-                    <img src={loginPageImage} className="login-image" alt="image" />
+                            <Copyright sx={{ mt: 4, mb: 4 }} />
+                        </Container>
+                    </div>
+                    <div className="right">
+                        <img src={loginPageImage} className="login-image" alt="image" />
+                    </div>
                 </div>
             </div>
         </>

@@ -40,18 +40,46 @@
     border: 0;
   }
 }
-.login-cont .login-main .login-image {
+.login-cont .login-main .left,
+.login-cont .login-main .right {
   width: 50%;
   height: 100%;
+}
+.login-cont .login-main .left .login-image,
+.login-cont .login-main .right .login-image {
+  width: 80%;
+  height: 80%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
 @media (max-width: 750px) {
-  .login-cont .login-main .login-image {
+  .login-cont .login-main .left .login-image,
+  .login-cont .login-main .right .login-image {
     display: none;
   }
+}
+.login-cont .login-main .left {
+  background-color: red;
+  display: flex;
+  align-items: center;
+}
+.login-cont .login-main .left .left-page {
+  width: 80%;
+  height: 80%;
+  background-color: rgb(87, 87, 186);
+  margin: 0;
+  margin-left: auto !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.login-cont .login-main .right {
+  background-color: yellow;
+  display: flex;
+  align-items: center;
 }
 
 img.company-avatar {

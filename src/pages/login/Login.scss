@@ -42,15 +42,47 @@ $white: #ffffff;
             border: 0;
         }
 
-        .login-image {
+        .left,
+        .right {
             width: 50%;
             height: 100%;
-            object-fit: cover;
-            object-position: center;
 
-            @media(max-width: 750px) {
-                display: none;
+            .login-image {
+                width: 80%;
+                height: 80%;
+                object-fit: cover;
+                object-position: center;
+
+                @media(max-width: 750px) {
+                    display: none;
+                }
             }
+
+        }
+
+        .left {
+            background-color: red;
+            display: flex;
+            align-items: center;
+
+            .left-page {
+                width: 80%;
+                height: 80%;
+                background-color: rgb(87, 87, 186);
+                margin: 0;
+                margin-left: auto !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        .right {
+            background-color: yellow;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
         }
 
     }
