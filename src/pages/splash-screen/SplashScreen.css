@@ -1,1 +1,18 @@
-/*# sourceMappingURL=SplashScreen.css.map */
+.splashCont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  background-color: #ffffff;
+}
+.splashCont img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}/*# sourceMappingURL=SplashScreen.css.map */

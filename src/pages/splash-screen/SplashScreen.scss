@@ -1,0 +1,23 @@
+$maroon: #800000;
+$lightMaroon: #be0000;
+$darkMaroon: #560000;
+$white: #ffffff;
+
+.splashCont {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    background-color: $white;
+
+    img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
