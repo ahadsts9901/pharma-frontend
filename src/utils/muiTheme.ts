@@ -1,21 +1,22 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import '@fontsource/jost/300.css';
+import '@fontsource/jost/400.css';
+import '@fontsource/jost/500.css';
+import '@fontsource/jost/700.css';
 
 import { createTheme } from '@mui/material/styles';
 
 export const themeSchema: any = {
     palette: {
         primary: {
-            light: '#3f3b3e',
-            main: '#3f3b3e',
-            dark: '#494346',
-            contrastText: '#f8f7f8',
+            light: '#254e65',
+            main: '#1f3b4d',
+            dark: '#122a3a',
+            // contrastText: '#C4DDE4',
+            contrastText: '#eff9fc',
         },
     },
     typography: {
-        fontFamily: 'Roboto, sans-serif',
+        fontFamily: 'Jost, Roboto, sans-serif',
         textTransform: 'none',
     },
     components: {
@@ -23,8 +24,8 @@ export const themeSchema: any = {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    // borderRadius: '50px',
-                    // padding: "12px 24px",
+                    borderRadius: '50px',
+                    padding: "12px 24px",
                 },
             }
         },
