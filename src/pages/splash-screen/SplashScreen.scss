@@ -4,6 +4,7 @@ $darkMaroon: #560000;
 $white: #ffffff;
 
 .splashCont {
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -11,7 +12,21 @@ $white: #ffffff;
     justify-content: center;
     align-items: center;
     gap: 3em;
-    background-color: $white;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../../../public/bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.6;
+        z-index: -1;
+    }
 
     img {
         width: 120px;
@@ -19,5 +34,4 @@ $white: #ffffff;
         object-fit: contain;
         object-position: center;
     }
-
 }
