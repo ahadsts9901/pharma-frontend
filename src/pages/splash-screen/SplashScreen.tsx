@@ -3,7 +3,7 @@ import logo from "/logo.webp"
 import * as React from 'react'
 import LinearProgress from '@mui/material/LinearProgress';
 
-const SplashScreen = () => {
+const SplashScreen = ({ loader }: any) => {
 
     const [progress, setProgress] = React.useState(0);
 
@@ -27,7 +27,7 @@ const SplashScreen = () => {
         <>
             <div className="splashCont">
                 <img src={logo} alt="logo" />
-                <LinearProgress variant="determinate" value={progress} sx={{ width: "300px" }} />
+                {loader && <LinearProgress variant="determinate" value={progress} sx={{ width: "300px" }} />}
             </div>
         </>
     )

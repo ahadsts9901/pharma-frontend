@@ -10,7 +10,7 @@ export const themeSchema: any = {
         primary: {
             light: '#be0000',
             main: '#800000',
-            dark: '#560000',
+            dark: '#1A191D',
             // contrastText: '#ffeeee',
             contrastText: '#ffffff',
         },

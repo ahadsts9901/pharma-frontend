@@ -62,7 +62,7 @@ const Routing = () => {
 
     return (
         <>
-            {currentUser?.isLogin == null ? <SplashScreen /> : null}
+            {currentUser?.isLogin == null ? <SplashScreen loader={true} /> : null}
             {currentUser?.isLogin == false ? <UnAuthRouting /> : null}
             {currentUser?.isLogin == true ? <AuthRouting /> : null}
         </>

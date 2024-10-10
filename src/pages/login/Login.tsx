@@ -10,7 +10,7 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { baseUrl, emailPattern, loginPageImage, passwordPattern, webUrl } from '../../utils/core';
+import { baseUrl, emailPattern, passwordPattern, webUrl } from '../../utils/core';
 import axios from "axios";
 import { useDispatch } from "react-redux"
 import { login } from "../../redux/user"
@@ -18,6 +18,7 @@ import logo from "../../../public/logo.webp"
 import AlertMUI from '../../components/mui/AlertMUI';
 import PasswordMUI from '../../components/mui/PasswordMUI';
 import { useNavigate } from 'react-router-dom';
+import SplashScreen from "../splash-screen/SplashScreen";
 
 export const CompanyAvatar = () => {
     const navigate = useNavigate()
@@ -127,8 +128,9 @@ export default function Main() {
                 clientSuccessMessage && <AlertMUI status="success" text={clientSuccessMessage} />
             }
             <div className="login-cont">
-                <div className="login-main">
-                    <div className="left">
+                <div className="left"><SplashScreen loader={false} /></div>
+                <div className="right">
+                    <div className="login-form">
                         <Container component="main" maxWidth="xs" className="left-page">
                             <CssBaseline />
                             <Box
@@ -162,12 +164,6 @@ export default function Main() {
                                         onChange={(value: any) => setPassword(value)}
                                         name="password"
                                     />
-                                    {/* <FormControlLabel style={{
-                            marginTop: "16px"
-                        }}
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        /> */}
                                     <Button
                                         type="submit"
                                         fullWidth
@@ -184,26 +180,10 @@ export default function Main() {
                                                 : "Sign In"
                                         }
                                     </Button>
-                                    {/* <Grid container>
-                            <Grid item xs style={{ marginRight: "16px" }}>
-                                <Link className="cursor-pointer"
-                                    onClick={() => navigate("/auth/forgot-password")}>
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="/auth/signup" variant="body2">
-                                    Dont have an account? Sign up
-                                </Link>
-                            </Grid>
-                        </Grid> */}
                                 </Box>
                             </Box>
                             <Copyright sx={{ mt: 4, mb: 4 }} />
                         </Container>
-                    </div>
-                    <div className="right">
-                        <img src={loginPageImage} className="login-image" alt="image" />
                     </div>
                 </div>
             </div>
