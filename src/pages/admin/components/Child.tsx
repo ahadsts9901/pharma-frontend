@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import PersonIcon from '@mui/icons-material/Person';
 import { primaryColor } from '../../../utils/data';
-import { Button, Checkbox, darken, FormControl, FormControlLabel, InputLabel, MenuItem, Select } from '@mui/material';
-import { theme } from '../../../utils/muiTheme';
+import { Button, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select } from '@mui/material';
+import { IoFilterSharp as FilterIcon } from "react-icons/io5";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import SideBarDrawer from '../../../components/mui/SideBarDrawer';
 import AddStudentForm from './AddStudentForm';
@@ -21,7 +20,8 @@ import axios from 'axios';
 import UsersTable from './UserTable';
 import NoResult from './NoResult';
 import Loading from './Loading';
-
+import { AiFillProduct } from "react-icons/ai";
+import { GrDownload as DownloadIcon } from "react-icons/gr";
 
 
 const Child = () => {
@@ -153,23 +153,27 @@ const Child = () => {
             <SideBarDrawer open={isSidebarOpen} setOpen={setIsSidebarOpen}>
                 <AddStudentForm isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} getUsers={getUsers} />
             </SideBarDrawer>
-            <div className='p-8 w-full flex flex-col justify-start items-start gap-4'>
+            <div className='w-full flex flex-col justify-start items-start gap-4'>
                 <>
                     <div className='w-full flex justify-between items-center'>
-                        <p className={`text-[${primaryColor}] text-[24px] flex justify-start items-start gap-2 font-bold`}> <PersonIcon sx={{ fontSize: 30, color: primaryColor }} /> Students</p>
-                        <Button variant='contained' color="primary"
-                            onClick={() => setIsSidebarOpen(true)}
-                            sx={{
-                                backgroundColor: darken(theme.palette.primary.main, 0.2),
-                                '&:hover': {
-                                    backgroundColor: darken(theme.palette.primary.main, 0.3),
-                                }
-                            }}
-                        ><AddCircleIcon sx={{ marginRight: "12px" }} /> Add Student</Button>
+                        <p className={`text-[${primaryColor}] text-[24px] flex justify-start items-start gap-2 font-bold`}>
+                            <AiFillProduct style={{ fontSize: 30, color: primaryColor }} /> Products
+                        </p>
+                        <div className='flex justify-start items-center gap-4'>
+                            <Button variant='contained' color="primary"
+                                onClick={() => setIsSidebarOpen(true)}
+                            ><FilterIcon style={{ marginRight: "12px" }} /> Clear Filters</Button>
+                            <Button variant='contained' color="primary"
+                                onClick={() => setIsSidebarOpen(true)}
+                            ><DownloadIcon style={{ marginRight: "12px" }} /> Export Data</Button>
+                            <Button variant='contained' color="primary"
+                                onClick={() => setIsSidebarOpen(true)}
+                            ><AddCircleIcon sx={{ marginRight: "12px" }} /> Add Product</Button>
+                        </div>
                     </div>
                 </>
-                <>
-                    <div className='w-full flex flex-col justify-start items-start gap-4'>
+                <div className='w-full flex flex-col justify-start items-start gap-4'>
+                        <div className='flex justify-start items-center gap-4 flex-wrap'>
                         <>
                             <SearchBar
                                 searchText={searchText}
@@ -180,64 +184,61 @@ const Child = () => {
                                 searchUsers={searchUsers}
                             />
                         </>
+                        <span className='w-[196px]'>
+                            <FormControl sx={{ width: "196px", marginTop: "8px" }}>
+                                <InputLabel id="demo-simple-select-label"
+                                    sx={{ background: "#fff" }}
+                                >Gender</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={gender ? gender : ""}
+                                    label="Gender"
+                                    onChange={(e: any) => setGender(e?.target?.value?.toUpperCase())}
+                                >
+                                    {
+                                        genderOptions?.map((gender: string, i: number) => <MenuItem key={i} value={gender?.toUpperCase()}>{gender}</MenuItem>)
+                                    }
+                                </Select>
+                            </FormControl>
+                        </span>
+                        <span className='w-[196px]'>
+                            <FormControl sx={{ width: "196px", marginTop: "8px" }}>
+                                <InputLabel id="demo-simple-select-label"
+                                    sx={{ background: "#fff" }}
+                                >Education</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={education ? education : ""}
+                                    label="Education"
+                                    onChange={(e: any) => setEducation(e?.target?.value?.toUpperCase())}
+                                >
+                                    {
+                                        educationOptions?.map((education: string, i: number) => <MenuItem key={i} value={education?.toUpperCase()}>{education}</MenuItem>)
+                                    }
+                                </Select>
+                            </FormControl>
+                        </span>
                         <>
-                            <div className='flex justify-start items-start gap-4'>
-                                <span className='w-[196px]'>
-                                    <FormControl sx={{ width: "196px", marginTop: "8px" }}>
-                                        <InputLabel id="demo-simple-select-label"
-                                            sx={{ background: "#fff" }}
-                                        >Gender</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={gender ? gender : ""}
-                                            label="Gender"
-                                            onChange={(e: any) => setGender(e?.target?.value?.toUpperCase())}
-                                        >
-                                            {
-                                                genderOptions?.map((gender: string, i: number) => <MenuItem key={i} value={gender?.toUpperCase()}>{gender}</MenuItem>)
-                                            }
-                                        </Select>
-                                    </FormControl>
-                                </span>
-                                <span className='w-[196px]'>
-                                    <FormControl sx={{ width: "196px", marginTop: "8px" }}>
-                                        <InputLabel id="demo-simple-select-label"
-                                            sx={{ background: "#fff" }}
-                                        >Education</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={education ? education : ""}
-                                            label="Education"
-                                            onChange={(e: any) => setEducation(e?.target?.value?.toUpperCase())}
-                                        >
-                                            {
-                                                educationOptions?.map((education: string, i: number) => <MenuItem key={i} value={education?.toUpperCase()}>{education}</MenuItem>)
-                                            }
-                                        </Select>
-                                    </FormControl>
-                                </span>
-                                <>
-                                    <LocalizationProvider dateAdapter={AdapterMoment}>
-                                        <DemoContainer components={['DatePicker']}>
-                                            <DatePicker label="Date of birth"
-                                                sx={{ width: "196px!important" }}
-                                                onChange={(e: any) => setDob(moment(e).format())}
-                                                maxDate={moment(new Date())}
-                                                value={dob ? moment(dob) : null}
-                                            />
-                                        </DemoContainer>
-                                    </LocalizationProvider>
-                                </>
-                            </div>
+                            <LocalizationProvider dateAdapter={AdapterMoment}>
+                                <DemoContainer components={['DatePicker']}>
+                                    <DatePicker label="Date of birth"
+                                        sx={{ width: "196px!important" }}
+                                        onChange={(e: any) => setDob(moment(e).format())}
+                                        maxDate={moment(new Date())}
+                                        value={dob ? moment(dob) : null}
+                                    />
+                                </DemoContainer>
+                            </LocalizationProvider>
                         </>
+                        </div>
                         <div className='w-full flex justify-start items-center gap-2 flex-wrap'>
                             <FormControlLabel control={<Checkbox checked={isDisabled == true} onChange={() => setIsDisabled(!isDisabled)} />} label="Disabled" />
                             <FormControlLabel control={<Checkbox checked={isSuspended == true} onChange={() => setIsSuspended(!isSuspended)} />} label="Suspended" />
                             <FormControlLabel control={<Checkbox checked={isAdmin == true} onChange={() => setIsAdmin(!isAdmin)} />} label="Admin" />
                             <FormControlLabel control={<Checkbox checked={isEmailVerified == true} onChange={() => setIsEmailVerified(!isEmailVerified)} />} label="Email verified" />
-                            <Button disabled={isLoading} style={{ padding: "4px 24px" }} onClick={() => {
+                            {/* <Button disabled={isLoading} style={{ padding: "4px 24px" }} onClick={() => {
                                 setGender(null)
                                 setEducation(null)
                                 setDob(null)
@@ -245,10 +246,9 @@ const Child = () => {
                                 setIsDisabled(null)
                                 setIsSuspended(null)
                                 setIsEmailVerified(null)
-                            }} variant="outlined" color="primary">Clear Filters</Button>
+                            }} variant="outlined" color="primary">Clear Filters</Button> */}
                         </div>
                     </div>
-                </>
                 <>
                     {
                         isLoading ? <Loading /> : users?.length ? <UsersTable users={users} isLoading={isLoading} /> : <NoResult />

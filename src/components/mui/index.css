@@ -2,18 +2,6 @@
     font-weight: bold !important;
 }
 
-.MuiDrawer-paper {
-    background-color: #24232C !important;
-}
-
-.MuiDrawer-paper * {
-    color: #fff !important;
-}
-
-.MuiDrawer-paper ul li {
-    border-bottom: 1px solid #363636 !important;
-}
-
 .editForm {
     width: 100%;
     display: flex;
